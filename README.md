@@ -10,6 +10,7 @@
     <p>Before you get started, make sure you have the following prerequisites installed on your system:</p>
     <ul>
         <li>PHP 8.2 and above</li>
+         <li>MYSQL 8.0 and above</li>
         <li>Composer 2.2 and above</li>
     </ul>
 
