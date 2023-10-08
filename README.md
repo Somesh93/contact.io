@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact.io Backend Codebase</title>
 </head>
 <body>
     <h1>Contact.io Backend Codebase</h1><p>This repository contains the backend codebase for Contact.io, which is a standard Laravel project designed to run on an App Server with a MySQL Database.</p>
