@@ -34,6 +34,8 @@
     </ol>
     <pre><code>php artisan serve</code></pre>
 
+<p> There is a postman collection in the repo as well just in case you would like to have a look at the api contract </p>
+
 <p>That's it! You should now have Contact.io up and running on your local server.</p>
 
 <p>Feel free to reach out if you have any questions or encounter any issues.</p>

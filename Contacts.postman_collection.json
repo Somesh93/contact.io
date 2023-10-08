@@ -1,0 +1,106 @@
+{
+	"info": {
+		"_postman_id": "13484d6c-afb9-47b1-9eab-fcafc7d2ac22",
+		"name": "Contacts",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2046183"
+	},
+	"item": [
+		{
+			"name": "Create Contact",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\" :  \"Somesh Tripahi\",\n    \"email\" : \"someshripathi@mail.com\",\n    \"title_id\" : 1\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "127.0.0.1:8000/contacts",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"contacts"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Titles",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "127.0.0.1:8000/titles",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"titles"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Find Contacts",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "127.0.0.1:8000/contacts/find?keywords=a",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"contacts",
+						"find"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "20",
+							"disabled": true
+						},
+						{
+							"key": "keywords",
+							"value": "a"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
