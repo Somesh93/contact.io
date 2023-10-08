@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Actions\SearchContactsAction;
+use App\Actions\UpdateContactTitleMapping;
 use App\Http\Requests\CreateContactRequest;
 use App\Http\Requests\GetContactRequest;
 use App\Models\CompanyJobTitleMapping;
@@ -15,7 +16,6 @@ use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Js;
 use Psy\Util\Json;
-use UpdateContactTitleMapping;
 
 class ContactController extends Controller
 {
@@ -66,8 +66,11 @@ class ContactController extends Controller
                     'title_id' => data_get($validatedRequest, 'title_id')
                 ];
 
+                if($titleId != null){
+                   return  app()->make(UpdateContactTitleMapping::class)->execute($updateMappingArr);
+                }
+                return new JsonResponse('Contact Created', 201);
 
-               return  app()->make(UpdateContactTitleMapping::class)->execute($updateMappingArr);
 
             }
 
@@ -96,7 +99,12 @@ class ContactController extends Controller
             ];
 
             DB::commit();
-            return  app()->make(CompanyJobTitleMappingRepository::class)->create($updateMappingArr);
+
+            if($titleId != null){
+                return  app()->make(UpdateContactTitleMapping::class)->execute($updateMappingArr);
+            }
+            return new JsonResponse('Contact Created', 201);
+
 
 
         } catch (\Exception $e) {

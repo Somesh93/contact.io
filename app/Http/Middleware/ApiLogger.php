@@ -29,7 +29,7 @@ class ApiLogger
         $requestInfo['response_status'] =  $response->getStatusCode();
         $requestInfo['output'] = $response->getContent();
 
-//        Log::channel('api_logger')->info('API Logs', [$requestInfo]);
+       Log::channel('api_logger')->info('API Logs', [$requestInfo]);
 
         return $response;
 

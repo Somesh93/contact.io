@@ -1,5 +1,5 @@
 <?php
-
+namespace App\Actions;
 use Illuminate\Http\JsonResponse;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Facades\DB;

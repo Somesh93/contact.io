@@ -24,12 +24,10 @@ class CreateContactRequest extends FormRequest
     public function rules(): array
     {
 
-        $titleId = $this->route('title_id');
-
         return [
             'name' => ['required'],
             'email' => ['required', 'email'],
-            'title_id' => ['int' ,new ValidJobTitle()]
+            'title_id' => ['sometimes' ,new ValidJobTitle()]
         ];
     }
 }
