@@ -15,7 +15,7 @@ return new class extends Migration
             Schema::create('company_job_title_mapping', function (Blueprint $table) {
                 $table->id();
                 $table->integer('contact_id');
-                $table->integer('title_id');
+                $table->integer('title_id')->nullable();
                 $table->timestamps();
             });
         }
